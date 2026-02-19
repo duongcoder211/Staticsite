@@ -1,0 +1,48 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        # Run pip in directory source
+        run: pip install -r requirements.txt
+        working-directory: source
+
+      - name: Deploy MkDocs
+        # Run deploy in directory source
+        run: mkdocs gh-deploy --force
+        working-directory: source
+
+#name: ci
+#on:
+#  push:
+#    branches:
+#      - main
+#permissions:
+#  contents: write
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Configure Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: 3.x
+#      - run: pip install -r requirements.txt
+#      - run: mkdocs gh-deploy --force
