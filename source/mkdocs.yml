@@ -32,14 +32,15 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - User Guide: user-guide/
-  - Developer Guide: dev-guide/
-  - Settings:
-    - Hello: nav/settings/favicon.md
-    - Hi: nav/settings/custom-highlight.md
-  - About:
-    - Release Notes: about/release-notes.md
+  - Portfolio: portfolio.md
+#  - Getting Started: getting-started.md
+#  - User Guide: user-guide/
+#  - Developer Guide: dev-guide/
+  - Repositories:
+    - Перый семестр: lab_idx_1_sem.md
+    - Второй семестр: lab_idx_2_sem.md
+  - О сайте:
+    - Кодекс поведения: about/code_of_conduct.md
     - Contributing: about/contributing.md
     - License: about/license.md
 
@@ -51,7 +52,7 @@ exclude_docs: |
 
 markdown_extensions:
   - toc:
-      permalink: 
+      permalink:
   - attr_list
   - def_list
   - tables
